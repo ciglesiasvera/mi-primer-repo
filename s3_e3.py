@@ -15,7 +15,7 @@ df = pd.DataFrame(datos)
 print("Datos originales con problemas:")
 print(df)
 
-print(f"\nTipos de datos: {df.dtypes}")
+""" print(f"\nTipos de datos: {df.dtypes}")
 print(f"\nDuplicados por id: {df['id'].duplicated().sum()}")
 print(f"Duplicados completos: {df.duplicated().sum()}")
 print(f"\nValores únicos en departamento: {df['departamento'].unique()}")
@@ -44,4 +44,4 @@ df_limpio['categoria_edad'] = pd.cut(df_limpio['edad'],
                                     labels=['Joven', 'Adulto', 'Senior'])
 
 print("Con columnas calculadas:")
-print(df_limpio[['nombre', 'edad', 'categoria_edad', 'salario', 'salario_mensual']])
+print(df_limpio[['nombre', 'edad', 'categoria_edad', 'salario', 'salario_mensual']]) """
