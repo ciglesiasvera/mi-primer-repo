@@ -1,0 +1,80 @@
+Verificación: Explica cómo la asimetría y curtosis afectan la interpretación de medidas de tendencia 
+central, y justifica por qué algunos outliers pueden ser transacciones válidas de clientes premium.
+
+================================================================================================
+
+1. Efecto de la asimetría en la interpretación de las medidas de tendencia central
+La asimetría (skewness) describe el grado y dirección del sesgo de una distribución.
+
+Asimetría positiva (sesgo a la derecha)
+En el dataset analizado, la asimetría es positiva, lo que implica:
+- Existencia de valores extremos altos (transacciones de gran monto).
+- La media aritmética se desplaza hacia la derecha, aumentando su valor.
+- La relación típica es:
+  Media > Mediana > Moda
+
+Implicancias analíticas:
+- La media deja de ser representativa del “valor típico” de una transacción.
+- La mediana se convierte en una medida más robusta, ya que:
+  - No se ve afectada por montos excepcionalmente altos.
+  - Representa mejor el comportamiento central de la mayoría de los clientes.
+Conclusión: En distribuciones asimétricas, especialmente en datos financieros, la mediana es preferible 
+para describir el comportamiento típico.
+
+2. Efecto de la curtosis en la interpretación estadística
+
+La curtosis mide la concentración de valores alrededor de la media y el peso de las colas.
+
+Curtosis positiva (leptocúrtica)
+El análisis muestra una curtosis positiva, lo que indica:
+- Alta concentración de valores cerca del centro.
+- Colas pesadas, con mayor probabilidad de valores extremos.
+- Mayor frecuencia de transacciones excepcionalmente grandes en comparación con una distribución normal.
+
+Implicancias analíticas:
+- La presencia de valores extremos no es necesariamente anómala, sino parte estructural de la distribución.
+- Métodos basados en supuestos normales (como Z-score) tienden a sobre-detectar outliers.
+- La variabilidad real del negocio puede ser subestimada si se eliminan estos valores.
+Conclusión: En distribuciones leptocúrticas, los valores extremos deben analizarse en contexto antes de ser descartados.
+
+3. Relación entre asimetría, curtosis y outliers
+
+Cuando coexisten:
+- Asimetría positiva
+- Curtosis elevada
+
+se espera naturalmente:
+- Una cola derecha extensa.
+- Alta frecuencia de valores que superan umbrales estadísticos tradicionales.
+- Diferencias importantes entre media y mediana.
+
+En este escenario:
+- No todos los outliers representan errores, fraudes o datos atípicos.
+- Muchos reflejan comportamientos reales de segmentos específicos.
+
+4. Justificación de outliers como transacciones válidas de clientes premium
+En un contexto financiero segmentado por tipo de cliente (Regular, Premium, VIP):
+
+Razones por las que un outlier puede ser válido:
+1. Capacidad de gasto superior
+   Clientes premium realizan compras de mayor valor de forma habitual.
+- Naturaleza del producto o servicio
+  Electrónicos de alta gama, servicios especializados o compras corporativas generan montos elevados.
+- Comportamiento esperado del segmento
+  Para clientes VIP, lo que es un outlier global puede ser un valor típico dentro de su subgrupo.
+- Outliers condicionales
+  Son atípicos respecto al total, pero normales dentro de su categoría o segmento.
+
+5. Conclusión
+- La asimetría positiva invalida el uso exclusivo de la media como medida representativa.
+- La curtosis positiva indica que los valores extremos son parte natural de la distribución.
+- Los outliers detectados estadísticamente no deben eliminarse automáticamente.
+- En análisis financieros, los outliers deben evaluarse:
+  - Por segmento
+  - Por contexto de negocio
+  - Por impacto analítico
+
+En síntesis:
+La correcta interpretación de medidas de tendencia central y outliers requiere comprender la forma de la 
+distribución y el comportamiento diferenciado de los clientes, evitando decisiones basadas únicamente en 
+criterios estadísticos generales.
