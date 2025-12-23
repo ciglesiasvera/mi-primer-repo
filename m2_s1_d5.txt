@@ -1,0 +1,150 @@
+Verificación: Evalúa si tu análisis responde preguntas clave de negocio: 
+1. ¿Qué vende mejor? 
+2. ¿Quiénes son los mejores clientes? 
+3. ¿Cuándo ocurren las ventas? 
+4. ¿Qué patrones requieren acción inmediata?
+
+1. ¿Qué vende mejor?
+✔ Respuesta: Sí, está bien respondida
+
+Evidencia clara del análisis:
+
+Categoría líder en ventas totales:
+Deportes con $674.308,67, seguida muy de cerca por Electrónica, Hogar y Libros.
+
+Distribución relativamente equilibrada entre categorías, sin dependencia extrema de una sola.
+
+Insight de negocio:
+
+Deportes es la categoría top, pero no es un monopolio de ingresos.
+
+El portafolio está bien diversificado → menor riesgo comercial.
+
+Acción sugerida:
+
+Priorizar campañas en Deportes.
+
+Usar esta categoría como “ancla” para cross-selling con Ropa y Electrónica.
+
+2. ¿Quiénes son los mejores clientes?
+   Respuesta: Parcialmente respondida (requiere refinamiento)
+
+Lo que muestra el análisis:
+
+Clientes "Regular" generan el mayor volumen total de ventas ($2.188.153), simplemente por volumen.
+
+- Clientes "Premium" y "VIP":
+
+  - Ticket promedio NO es significativamente mayor.
+
+  - Cantidad promedio por pedido es prácticamente igual.
+
+Problema detectado:
+
+El reporte afirma:
+
+"Existen patrones claros de comportamiento por tipo de cliente"
+pero los datos no lo respaldan.
+
+Correlación tipo_cliente ↔ total_pedido:
+-0.018 → irrelevante estadísticamente
+
+Insight real:
+
+En este dataset:
+- El valor del pedido NO depende del tipo de cliente.
+- La segmentación actual no está generando diferenciación económica.
+
+Acción inmediata recomendada:
+
+- Revisar la definición de “Premium” y “VIP”.
+- Diseñar beneficios reales (descuentos, bundles, upselling).
+- Analizar frecuencia de compra por cliente, no solo ticket.
+
+3. ¿Cuándo ocurren las ventas?
+✔ Respuesta: Sí, correctamente respondida
+Ventas por mes
+
+- Meses 1 y 3 presentan mayores ingresos.
+- Mes 4 es más bajo (dataset incompleto hasta el día 15).
+
+Insight temporal:
+
+- Existe variación mensual, aunque no estacionalidad fuerte (solo 4 meses).
+
+Ventas por día de la semana
+
+- Tuesday lidera en ventas totales.
+- Lunes, viernes y domingo también son fuertes.
+- Jueves es consistentemente el más bajo.
+
+Acción sugerida:
+
+Programar promociones los martes.
+
+Activar campañas para elevar jueves (descuentos flash, envíos gratis).
+
+4. ¿Qué patrones requieren acción inmediata?
+   ¡Aquí está el mayor hallazgo crítico!
+4.1 Outliers de alto valor: análisis incorrecto
+
+Resultado obtenido:
+
+PRODUCTOS DE ALTO VALOR (OUTLIERS): 0
+
+
+Problema:
+
+Esto contradice el insight declarado:
+
+“Los productos de alto valor representan una porción significativa de ingresos”
+
+Causa técnica:
+- precio_unitario sigue una distribución uniforme.
+- El método IQR no detecta outliers en distribuciones uniformes.
+
+Conclusión:
+- No existen productos premium reales en este dataset.
+- El insight del reporte es inválido.
+
+Acción inmediata:
+- Corregir el reporte ejecutivo.
+- O redefinir outliers por percentiles (ej. top 5%).
+
+4.2 Drivers reales del total del pedido (hallazgo clave)
+
+Correlaciones fuertes:
+
+precio_unitario ↔ total_pedido = +0.743
+
+cantidad ↔ total_pedido = +0.613
+
+Insight crítico de negocio:
+- El ingreso depende casi exclusivamente del precio y la cantidad, no del cliente ni del momento.
+
+Acción inmediata:
+- Estrategias de upselling (precio).
+- Bundles y packs (cantidad).
+
+No invertir aún en segmentación avanzada de clientes sin rediseño.
+
+5. Evaluación final por pregunta de negocio
+Pregunta de negocio	¿Respondida?	Evaluación
+¿Qué vende mejor?	✅ Sí	Correcta y bien sustentada
+¿Quiénes son los mejores clientes?	⚠ Parcial	Insight declarado no respaldado
+¿Cuándo ocurren las ventas?	✅ Sí	Buen análisis temporal
+¿Qué requiere acción inmediata?	⚠ Parcial	Outliers mal interpretados
+
+6. Conclusión ejecutiva
+- El EDA es técnicamente sólido y cubre los ejes clave del negocio.
+- El reporte ejecutivo es parcialmente inconsistente con los resultados reales.
+- El mayor valor del análisis está en identificar que:
+  - El negocio no está aprovechando la segmentación de clientes.
+  - El crecimiento depende hoy de precio y volumen, no de fidelización.
+
+Recomendación final
+
+Antes de tomar decisiones estratégicas:
+- Corregir insights no sustentados.
+- Reanalizar clientes por frecuencia y valor acumulado (RFM).
+- Ajustar la definición de clientes Premium/VIP.
