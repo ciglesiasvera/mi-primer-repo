@@ -1,0 +1,122 @@
+1. Marco conceptual: correlación vs causalidad
+Una correlación indica asociación estadística, no necesariamente una relación causa–efecto.
+Para evaluar sentido causal, se consideran criterios como:
+- Plausibilidad teórica (pedagógica / psicológica).
+- Direccionalidad lógica.
+- Ausencia de circularidad.
+- Coherencia con evidencia empírica conocida.
+
+2. Correlaciones con sentido causal plausible
+Aunque las magnitudes son débiles (lo cual es realista en datos educativos), algunas 
+relaciones sí tienen coherencia causal.
+
+2.1 Horas de estudio semanal → Promedio de calificaciones
+Correlación: +0.076 (débil positiva)
+
+Interpretación causal:
+- Es razonable asumir que más horas de estudio contribuyen a mejores resultados académicos.
+- La baja magnitud sugiere:
+  - Variabilidad en la calidad del estudio.
+  - Influencia de factores no observados (metodología docente, habilidades cognitivas, motivación).
+
+Insight clave:
+El estudio es necesario, pero no suficiente por sí solo para explicar el rendimiento académico.
+
+2.2 Nivel socioeconómico → Promedio de calificaciones
+Correlación: +0.060 (débil positiva)
+
+Interpretación causal:
+- Mayor nivel socioeconómico suele implicar:
+  - Acceso a recursos educativos.
+  - Ambientes de estudio más estables.
+- La relación es débil, lo que indica que el nivel socioeconómico no determina el desempeño, 
+  solo lo condiciona parcialmente.
+
+Insight clave:
+El rendimiento académico no está fuertemente determinado por el origen socioeconómico, lo que 
+sugiere cierto grado de equidad estructural en el dataset.
+
+3. Correlaciones con alta probabilidad de ser espurias
+Estas correlaciones no tienen un mecanismo causal claro o son efectos indirectos de otras variables.
+
+3.1 ID del estudiante ↔ Calificaciones
+Correlación: ≈ 0
+
+Clasificación: Espuria / artefacto técnico
+- El identificador es arbitrario.
+- No tiene interpretación real.
+
+3.2 Ingresos familiares ↔ Calificaciones
+Correlación: -0.034
+
+Clasificación: Espuria o mediada
+- No existe una relación directa ingreso → nota.
+- El efecto real, si existe, está mediado por:
+  - Recursos educativos.
+  - Nivel socioeconómico.
+  - Apoyo familiar.
+
+Insight:
+Usar ingresos como predictor directo del rendimiento es metodológicamente débil.
+
+3.3 Edad ↔ Calificaciones
+Correlación: -0.065
+
+Clasificación: Espuria / contextual
+- En un rango estrecho de edad (14–19 años), la edad:
+  - No refleja madurez académica real.
+  - Puede estar correlacionada con repitencia o trayectorias educativas distintas.
+
+Insight:
+La edad por sí sola no es un buen predictor del rendimiento en contextos escolares homogéneos.
+
+4. Correlaciones de bienestar: relaciones no causales directas
+4.1 Satisfacción con la vida ↔ Estrés
+Correlación: +0.072 (muy débil)
+
+Interpretación:
+- La relación esperada sería negativa.
+- El resultado cercano a cero indica:
+  - Medidas subjetivas con alto ruido.
+  - Posible coexistencia de estudiantes satisfechos pero exigidos.
+
+Insight:
+El bienestar estudiantil es multidimensional y no se explica con relaciones lineales simples.
+
+4.2 Horas extracurriculares ↔ Asistencia / Estrés
+Correlaciones: débiles y negativas
+
+Clasificación: No causales directas
+- Actividades extracurriculares pueden:
+  - Reducir tiempo disponible para clases.
+  - O actuar como factor protector del estrés.
+- El efecto neto es pequeño y variable según el estudiante.
+
+5. Insights globales del análisis de rendimiento estudiantil
+
+Insight 1: El rendimiento académico es multifactorial
+Ninguna variable individual explica de forma fuerte las calificaciones. Esto refleja la 
+realidad educativa:
+El desempeño surge de la interacción entre hábitos, contexto, bienestar y factores cognitivos.
+
+Insight 2: Las correlaciones débiles son esperables y realistas
+En ciencias sociales y educación:
+- Correlaciones > 0.6 son raras.
+- Valores entre 0.05 y 0.2 pueden ser relevantes a nivel poblacional.
+
+Insight 3: Segmentación sería más informativa que correlación global
+El análisis sugiere que:
+- Las relaciones podrían ser más fuertes dentro de subgrupos (ej. alto estrés, bajo NSE).
+- Un modelo multivariado o análisis por clusters sería más adecuado.
+
+6. Conclusión final
+- Correlaciones con sentido causal plausible:
+  - Horas de estudio → Calificaciones
+  - Nivel socioeconómico → Calificaciones (efecto condicionado)
+- Correlaciones probablemente espurias o mediadas:
+  - Edad, ingresos, ID del estudiante
+  - Varias relaciones de bienestar medidas globalmente
+- Conclusión central:
+  El análisis confirma que el rendimiento estudiantil no puede explicarse mediante relaciones 
+  bivariadas simples, y que la interpretación correcta exige contexto pedagógico y enfoque 
+  multivariable.
