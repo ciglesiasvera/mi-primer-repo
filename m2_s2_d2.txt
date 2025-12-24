@@ -1,0 +1,179 @@
+Verificación: Examina los gráficos generados e identifica insights específicos 
+sobre el negocio: 
+
+¿Qué productos son más rentables? 
+¿Cómo varían las ventas por región? 
+¿Existe estacionalidad en las ventas diarias?
+
+1. Verificación del Análisis Univariado
+
+1.1 Distribución del Total de Ventas (Histograma)
+
+Qué muestra el gráfico
+
+- Distribución asimétrica a la derecha (right-skewed).
+- Gran concentración de ventas entre valores bajos y medios.
+- Cola larga de ventas altas poco frecuentes.
+- La media (~$2.778) está desplazada hacia la derecha respecto al centro visual.
+
+Insight clave
+
+- Existen pocas ventas de alto valor que influyen fuertemente en el total.
+- El negocio depende parcialmente de transacciones grandes poco frecuentes.
+
+Implicación empresarial
+
+Estrategia de:
+
+- Upselling / cross-selling para mover ventas medianas hacia el tramo alto.
+- Identificación de clientes/productos responsables de la cola alta.
+
+
+1.2 Distribución por Producto (Box Plot)
+
+Qué muestra el gráfico
+
+Los cuatro productos presentan:
+
+- Medianas relativamente similares.
+- Amplia dispersión (IQR grande).
+- Outliers superiores significativos.
+
+Comparación relativa
+
+Producto D muestra:
+
+- Mediana ligeramente superior.
+- Mayor rango superior (potencial de ventas grandes).
+- Producto A y B más estables pero con menor upside.
+
+Insight clave
+
+- Producto D parece ser el más rentable potencialmente, aunque más volátil.
+- No hay productos “malos”, pero sí diferencias en perfil de riesgo-retorno.
+
+Implicación empresarial
+
+Producto D:
+
+- Priorizar campañas premium.
+- Analizar clientes que compran este producto.
+
+Productos A/B:
+
+- Ideales para volumen y estabilidad.
+
+
+1.3 Ventas Totales por Región (Bar Chart Horizontal)
+
+Qué muestra el gráfico
+Ranking claro:
+
+1. Sur ≈ $767K
+2. Norte ≈ $764K
+3. Este ≈ $655K
+4. Oeste ≈ $591K
+
+Insight clave
+
+- Sur y Norte concentran el mayor volumen.
+- Diferencia significativa entre regiones líderes y rezagadas.
+
+Implicación empresarial
+
+Región Oeste:
+
+- Diagnóstico: menor demanda, menor penetración o problema comercial.
+
+Estrategia:
+
+- Replicar prácticas del Sur/Norte.
+- Ajustar precios, logística o campañas regionales.
+
+
+1.4 Distribución de Tipos de Cliente (Pie Chart)
+
+Qué muestra el gráfico
+
+- Regular: ~59%
+- Premium: ~31%
+- VIP: ~10%
+
+Insight clave
+
+- La base del negocio es Regular, pero:
+- Premium + VIP = ~41%, segmento altamente relevante.
+
+Implicación empresarial
+
+Gran oportunidad de:
+
+- Migrar Regular → Premium.
+- Programas de fidelización VIP.
+- Justifica estrategias diferenciadas por segmento.
+
+
+2. Verificación del Análisis Bivariado
+
+2.1 Precio Unitario vs Cantidad (Scatter Plot)
+
+Qué muestra el gráfico
+
+Relación inversa moderada:
+
+- Precios altos → cantidades menores.
+- Precios bajos → mayores cantidades.
+- El color (total de venta) revela:
+
+Ventas totales altas ocurren tanto por:
+
+- Precio alto + cantidad media
+- Precio medio + cantidad alta
+
+Insight clave
+
+- No existe una única estrategia ganadora.
+- El ingreso total se maximiza por combinaciones distintas.
+
+Implicación empresarial
+
+Segmentar estrategias:
+
+- Productos premium (precio alto).
+- Productos de volumen (cantidad alta).
+- Evitar decisiones simplistas basadas solo en precio o cantidad.
+
+
+2.2 Evolución de Ventas Diarias (Serie Temporal)
+
+Qué muestra el gráfico
+
+- Alta volatilidad diaria.
+- No se observa estacionalidad clara a simple vista.
+- Tendencia general relativamente estable.
+
+Insight clave
+
+- El negocio es operacionalmente intenso, con variaciones diarias fuertes.
+- La falta de estacionalidad visible sugiere:
+  - Influencia de factores tácticos (promociones, eventos, clientes).
+
+Implicación empresarial
+
+Recomendado:
+
+- Suavizado (rolling averages).
+- Análisis semanal/mensual.
+- Detección de anomalías para picos extremos.
+
+
+3. Conclusión
+
+Este análisis visual inicial permite afirmar que el negocio presenta:
+
+- Distribuciones sesgadas.
+- Productos con perfiles distintos de rentabilidad.
+- Regiones claramente diferenciadas.
+- Segmentación de clientes con alto potencial estratégico.
+- Las visualizaciones habilitan decisiones, no solo descripción.
+
