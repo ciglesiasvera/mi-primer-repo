@@ -1,0 +1,10 @@
+2026-01-12 22:40:47,648 - INFO - Iniciando pipeline ETL completo
+2026-01-12 22:40:47,648 - INFO - Iniciando extracción de datos
+2026-01-12 22:40:47,651 - INFO - Extraídos 100 registros
+2026-01-12 22:40:47,651 - INFO - extracción de datos completada en 0.00s
+2026-01-12 22:40:47,651 - INFO - Iniciando transformación de datos
+2026-01-12 22:40:47,668 - INFO - Transformaciones aplicadas correctamente
+2026-01-12 22:40:47,669 - INFO - transformación de datos completada en 0.02s
+2026-01-12 22:40:47,669 - INFO - Iniciando carga de datos
+2026-01-12 22:40:47,670 - INFO - Cargados 100 registros
+2026-01-12 22:40:47,670 - INFO - carga de datos completada en 0.00s
